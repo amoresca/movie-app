@@ -6,18 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# actor = Actor.new({first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock"})
-# actor.save
-
-# actor = Actor.new({first_name: "Keira", last_name: "Knightley", known_for: "Pride and Prejudice"})
-# actor.save
+# 10.times do
+#   Actor.create(
+#     {
+#       first_name: FFaker::Name.first_name,
+#       last_name: FFaker::Name.last_name,
+#       known_for: FFaker::Movie.title
+#     }
+#   )
+# end
 
 10.times do
-  Actor.create(
+  Movie.create(
     {
-      first_name: FFaker::Name.first_name,
-      last_name: FFaker::Name.last_name,
-      known_for: FFaker::Movie.title
+      title: FFaker::Movie.title,
+      year: FFaker::Vehicle.year,
+      plot: FFaker::HipsterIpsum.paragraph
     }
   )
 end
