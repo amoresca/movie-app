@@ -1,6 +1,6 @@
 class Api::MoviesController < ApplicationController
   def index
-    @movies = Movie.order(title: :asc)
+    @movies = Movie.where("english = ?", true).order(title: :asc)
     render "index.json.jb"
   end
 
