@@ -3,12 +3,18 @@ Rails.application.routes.draw do
   # get "/photos" => "photos#index"
 
   namespace :api do
+    # Users
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
+
+    # Movies
     get "/movies" => "movies#index"
     post "/movies" => "movies#create"
     get "/movies/:id" => "movies#show"
     patch "/movies/:id" => "movies#update"
     delete "/movies/:id" => "movies#destroy"
 
+    # Actors
     get "/actors" => "actors#index"
     post "/actors" => "actors#create"
     get "/actors/:id" => "actors#show"
