@@ -14,6 +14,13 @@ Rails.application.routes.draw do
     patch "/movies/:id" => "movies#update"
     delete "/movies/:id" => "movies#destroy"
 
+    # MovieGenres
+    post "/movie_genres" => "movie_genres#create"
+
+    # Genres
+    get "/genres" => "genres#index"
+    post "/genres" => "genres#create"
+
     # Actors
     get "/actors" => "actors#index"
     post "/actors" => "actors#create"
