@@ -45,3 +45,4 @@ gem 'jb'
 
 # Additional gems
 gem 'ffaker'
+gem 'seed_dump'
