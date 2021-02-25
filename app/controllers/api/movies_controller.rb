@@ -18,6 +18,13 @@ class Api::MoviesController < ApplicationController
     )
 
     if @movie.save
+      if params[:genre_id]
+        @movie_genre = MovieGenre.new(
+          movie_id: @movie.id,
+          genre_id: params[:genre_id]
+        )
+        @movie_genre.save
+      end
       render "show.json.jb"
     else
       render json: { errors: @movie.errors.full_messages }, status: :unprocessable_entity
